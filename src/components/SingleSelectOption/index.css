@@ -1,0 +1,19 @@
+.select-option {
+  width: 250px;
+  height: 40px;
+  color: #323f4b;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Roboto;
+  line-height: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 280px) {
+  .select-option {
+    margin: 10px;
+  }
+}

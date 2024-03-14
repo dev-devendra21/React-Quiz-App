@@ -1,0 +1,79 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+.assessment_instructions_img {
+  width: 250px;
+  height: 234px;
+}
+
+.instructions_card {
+  box-shadow: 0px 4px 16px 0px #7b879429;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.instructions_card > h1 {
+  color: #164687;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.instructions_card > ol {
+  padding-left: 20px;
+}
+
+.instructions_card > ol > li {
+  font-size: 14px;
+  color: #496387;
+}
+
+.instructions_card > ol > li > p {
+  color: #496387;
+  font-size: 14px;
+}
+
+.instructions_card > ol > li > p > span {
+  font-weight: 700;
+}
+
+.start-assessment-btn {
+  background-color: #164687;
+  padding: 8px 16px 8px 16px;
+  border-radius: 5px;
+  color: #ffffff;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .home-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .assessment_instructions_img {
+    width: 430px;
+    height: 360px;
+  }
+
+  .home-image-container {
+    order: 1;
+  }
+
+  .instructions_card > h1 {
+    font-size: 32px;
+  }
+
+  .instructions_card > ol > li {
+    font-size: 20px;
+  }
+
+  .instructions_card > ol > li > p {
+    font-size: 20px;
+  }
+}

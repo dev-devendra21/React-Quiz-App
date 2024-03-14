@@ -1,0 +1,28 @@
+.image-option-container {
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.image-option {
+  width: 220px;
+  height: 70px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-option:hover {
+  border: 1px solid #263868;
+}
+
+.selected-image-option {
+  border: 2px solid #263868;
+}
+
+@media screen and (min-width: 1200px) {
+  .image-option {
+    width: 250px;
+  }
+}

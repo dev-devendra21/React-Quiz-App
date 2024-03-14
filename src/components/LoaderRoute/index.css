@@ -1,0 +1,6 @@
+.loader-container {
+  display: flex;
+  height: calc(100vh - 20px);
+  align-items: center;
+  justify-content: center;
+}

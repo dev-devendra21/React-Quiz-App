@@ -1,0 +1,190 @@
+.results-container {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 16px 0px #7b879429;
+  border-radius: 4px;
+  width: calc(100% - 30px);
+  height: 480px;
+}
+
+.submit-view {
+  width: 250px;
+  height: 230px;
+}
+
+.submit-time-taken-text {
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  text-align: left;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-time-taken {
+  color: #164687;
+  margin-left: 10px;
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.congarts-text {
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  text-align: center;
+  color: #334155;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.time-up {
+  width: 240px;
+  height: 230px;
+}
+
+.time-up-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #334155;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.not-complete-text {
+  font-family: Roboto;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #64748b;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.your-score-text {
+  color: #164687;
+  font-family: Roboto;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.your-score-count {
+  color: #044682;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reattempt-btn {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  background-color: #164687;
+  width: 120px;
+  height: 40px;
+  padding: 8px 32px 8px 32px;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.time-taken-container {
+  display: flex;
+  align-items: center;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .results-card {
+    width: 650px;
+    height: 450px;
+  }
+  .time-up {
+    width: 400px;
+    height: 230px;
+  }
+
+  .submit-view {
+    width: 350px;
+    height: 230px;
+  }
+
+  .congarts-text {
+    font-size: 24px;
+  }
+
+  .submit-time-taken-text {
+    font-size: 18px;
+  }
+
+  .submit-time-taken {
+    font-size: 24px;
+  }
+
+  .time-up-heading {
+    font-size: 36px;
+  }
+
+  .not-complete-text {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .your-score-text {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .your-score-count {
+    font-size: 48px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .reattempt-btn {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,30 @@
+.website-header-logo {
+  width: 98px;
+  height: 55.67px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263868;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.logout-button {
+  width: 86px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #f1f5f9;
+  color: #f1f5f9;
+  cursor: pointer;
+}
