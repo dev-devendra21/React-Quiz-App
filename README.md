@@ -1,293 +1,234 @@
-In this project let's build an **Nxt Assess App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
+# NxtAssess — Interactive Quiz & Assessment Platform
 
-You will demonstrate your skills by creating an app that will fetch data from an internal server using a component, displaying that data, routing concepts, authentication and authorization, and adding responsiveness to the website
+NxtAssess is an interactive and responsive quiz assessment platform built with **React.js**. The application provides a complete assessment flow including authentication, protected routes, API-driven questions, multiple question formats, countdown-based assessments, question navigation, score calculation, and result tracking.
 
-This is an individual assessment. All work must be your own. You can request for the feedback after your project submission in the discussions.
+The project was developed to practice and demonstrate practical React concepts including **API integration, authentication and authorization, routing, state management, dynamic rendering, conditional rendering, and responsive UI development**.
+
+## Live Demo
+
+https://reactquizbydev.ccbp.tech/
+
+## Design
+
+The application UI was implemented based on the Nxt Assess Figma design.
+
+**Figma Design:**
+https://www.figma.com/file/zrXNYeUKIuICnGbGGg0jt2/NXT-Assess
+
+## Features
+
+### Authentication & Authorization
+
+* User login with credential validation
+* Displays API-provided error messages for invalid credentials
+* Password visibility toggle
+* Redirects authenticated users to the Home page
+* Prevents unauthenticated users from accessing protected routes
+* Redirects authenticated users away from the Login page
+* Logout functionality
+
+### Home
+
+* Provides an entry point to the assessment
+* Start Assessment navigation
+* Responsive layout for different screen sizes
+
+### Assessment
+
+* Fetches questions dynamically from an API
+* Displays questions and their corresponding options
+* Supports multiple question formats:
+
+  * Default options
+  * Image-based options
+  * Single-select options
+* Dynamically renders the appropriate UI based on the question type
+* Tracks answered and unanswered questions
+* Allows users to navigate between questions
+* Preserves previously selected answers
+* Allows users to change answers
+* Displays the Next Question button where applicable
+* Submit Assessment functionality
+
+### Countdown Timer
+
+* Implements a **10-minute assessment timer**
+* Countdown runs throughout the assessment
+* Automatically submits the assessment when the timer expires
+* Tracks time taken for the assessment
+
+### Question Navigation
+
+* Displays question numbers for quick navigation
+* Shows answered and unanswered question states
+* Allows users to move directly to a specific question
+* Preserves selected answers while navigating between questions
+
+### Results
+
+* Displays the assessment score
+* Displays the time taken when the assessment is submitted manually
+* Displays the score when the assessment ends due to timeout
+* Provides a Reattempt option
+* Resets assessment state before starting a new attempt
+
+### Routing
+
+Implemented client-side routing for:
+
+* `/` — Home
+* `/assessment` — Assessment
+* `/results` — Results
+* `/login` — Login
+* `*` — Not Found
+
+### Error & Loading States
+
+* Displays a loader while fetching assessment questions
+* Handles failed API requests
+* Provides a Retry option when question fetching fails
+* Includes a custom Not Found page for undefined routes
+
+### Responsive Design
+
+* Responsive UI for mobile, tablet, and desktop devices
+* Maintains consistent functionality across different screen sizes
+
+## Tech Stack
+
+* **Frontend:** React.js
+* **Language:** JavaScript
+* **Routing:** React Router
+* **API:** REST API Integration
+* **State Management:** React State & Hooks
+* **Styling:** CSS3
+* **UI:** Responsive Design
+* **Version Control:** Git, GitHub
+
+## API Integration
+
+### Login API
+
+```text
+POST https://apis.ccbp.in/login
+```
+
+Used for user authentication and credential validation.
+
+### Questions API
+
+```text
+GET https://apis.ccbp.in/assess/questions
+```
+
+Used to dynamically retrieve assessment questions and their corresponding options.
+
+## Application Flow
+
+```text
+Login
+  ↓
+Home
+  ↓
+Assessment
+  ↓
+Submit / Time Up
+  ↓
+Results
+  ↓
+Reattempt
+  ↓
+Assessment
+```
+
+Protected routes ensure that only authenticated users can access the Home, Assessment, and Results pages.
+
+## Getting Started
 
 ### Prerequisites
 
-#### UI Prerequisites
+Make sure you have the following installed:
 
-<details>
-<summary>Click to view</summary>
+* Node.js
+* npm
+* Git
 
-- What is Figma?
-  - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href="https://www.figma.com/" target="_blank">website</a>
-- Create a Free account in Figma.
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=hrHL2VLMl7g&t=37s" target="_blank">this</a> video to create a free Figma account. Watch the video upto **00:50**
-- How to Check CSS in Figma?
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=B242nuM3y2s" target="_blank">this</a> video to check CSS in a Figma screen. Watch the video upto **02:45**.
-- Export Images in Figma screen
+### Installation
 
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=NpzL1MONwaw" target="_blank">this</a> video to export images from a Figma screen.
-  - Click on the Export button to get Export options as shown in the below image.
+Clone the repository:
 
-  <div style="text-align:center;margin:10px 0px 0px 45px;width:200px;">
-    <img src="https://assets.ccbp.in/frontend/react-js/figma-export-option.png" />
-  </div>
-
-- Upload your exported images from Figma to Cloudinary and get image URLs from Cloudinary. Refer <a href="https://learning.ccbp.in/projects/course?c_id=fe4c935d-3ad5-4bb8-a1a5-9b045ae70010&s_id=2f72d6fe-09a7-4c0a-b0db-196740c853a0&t_id=6535e48d-fb4e-45c4-9654-3da423c79e26" target="_blank">this</a> session for better understanding.
-
-</details>
-
-#### Design Files
-
-<details>
-<summary>Click to view</summary>
-
-- You can check the **Design Files** for different devices <a href="https://www.figma.com/file/zrXNYeUKIuICnGbGGg0jt2/NXT-Assess" target="_blank">here</a>.
-
-</details>
-
-### Set Up Instructions
-
-<details>
-<summary>Click to view</summary>
-
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
-
-### Completion Instructions
-
-<details>
-<summary>Functionality to be added</summary>
-<br/>
-The app must have the following functionalities
-
-- **Login Route**
-
-  - When an invalid credentials are provided and the **Login** button is clicked, then the respective error message received from the response should be displayed
-  - When a valid credentials are provided and the **Login** button is clicked, then the page should be navigated to the Home Route
-  - When an _unauthenticated_ user tries to access the Home Route, Assessment Route and Results Route, then the page should be navigated to Login Route
-  - When an _authenticated_ user tries to access the Home Route, Assessment Route and Results Route, then the page should be navigated to the respective route
-  - When an _authenticated_ user tries to access the Login Route, then the page should be navigated to the Home Route
-  - When the **Show Password** checkbox is checked, then the password should be shown
-  - When the **Show Password** checkbox is unchecked, then the password should be masked
-
-- **Home Route**
-
-  - When an authenticated user opens the Home Route,
-    - When the **Start Assessment** button is clicked, then the page should be navigated to the Assessment Route
-
-- **Assessment Route**
-
-  - When an authenticated user opens the Assessment Route,
-
-    - An HTTP GET request should be made to **questionsApiUrl**
-
-      - **_loader_** should be displayed while fetching the data
-      - After the data is fetched successfully,
-        - The text of the first question, along with its corresponding options from the list of questions received in the response, should be displayed.
-          - If the `option_type` value is `DEFAULT`, then the default options view should be displayed as shown in the Figma
-          - If the `option_type` value is `IMAGE`, then the image options view should be displayed as shown in the Figma
-          - If the `option_type` value is `SINGLE SELECT`, then the single select options view should be displayed as shown in the Figma
-        - The **Next Question** button should be displayed
-        - Answered questions count should be `0`
-        - Unanswered questions count should be equal to the total number of questions received from the response
-        - The timer should start running backwards from the timer limit value set
-      - If the HTTP GET request made is unsuccessful, then the failure view should be displayed as shown in the Figma
-        - When the **Retry** button is clicked, an HTTP GET request should be made to **questionsApiUrl**
-      - When a question number in the question numbers list is clicked,
-        - If the `option_type` value is `DEFAULT`, then the default options view should be displayed as shown in the Figma
-        - If the `option_type` value is `IMAGE`, then the image options view should be displayed as shown in the Figma
-        - If the `option_type` value is `SINGLE SELECT`, then the single select options view should be displayed as shown in the Figma
-
-    - When the **Next Question** button is clicked, then the next question text and its corresponding options should be displayed
-    - If the active question has the `option_type` value as either `DEFAULT` or `IMAGE` and an option is selected,
-      - Selected option should be highlighted as shown in the Figma
-      - Answered questions count should be incremented by one
-      - Unanswered questions count should be decremented by one
-    - If the active question has the `option_type` value as `SINGLE_SELECT`
-      - First option is selected by default
-      - Answered questions count should be incremented by one
-      - Unanswered questions count should be decremented by one
-    - When a question number in the question numbers list is clicked, if that has already been answered,
-      - The user should be able to see the selected option
-      - The user should be able to change the selected option
-      - Answered questions count and unanswered questions count should remain the same
-    - When the last question number in the question numbers list is clicked,
-      - The **Next Question** button should not be displayed
-    - When the **Submit Assessment** button is clicked within the time limit, then the assessment should end, and the page should be navigated to Results Route
-    - When the timer has ended,
-      - Assessment should end, and the page should be navigated to Results Route
-
-- **Results Route**
-
-  - When the **Submit Assessment** button in the Assessment Route is clicked within the time, then the submit view should be displayed as shown in the Figma
-
-    - The score achieved should be displayed
-    - Time taken to submit the assessment should be displayed
-
-  - When the timer has ended, then the time up view should be displayed as shown in the Figma
-
-    - The score achieved before the timer has ended should be displayed
-
-  - When the **Reattempt** button is clicked,
-    - Both score and time taken values should be reset to `0`
-    - Page should be navigated to Assessment Route
-    - User should be able to reattempt the assessment.
-
-- **Not Found Route**
-
-  - When a random path is provided as the URL, then the page should navigate to the Not Found Route
-
-- **Header**
-
-  - When the **website logo** image in the Header is clicked, the page should be navigated to the Home Route
-  - When the **Logout** button in the Header is clicked in Home or Assessment or Results Route, then the page should be navigated to the Login Route
-
-- Users should be able to view the website responsively in mobile view, tablet view as well
-
-  </details>
-
-<details>
-<summary>API Requests & Responses</summary>
-<br/>
-
-**loginApiUrl**
-
-#### API: `https://apis.ccbp.in/login`
-
-#### Method: `POST`
-
-#### Request:
-
-```json
-{
-  "username": "rahul",
-  "password": "rahul@2021"
-}
+```bash
+git clone https://github.com/dev-devendra21/React-Quiz-App.git
 ```
 
-#### Description:
+Navigate to the project directory:
 
-Returns a response based on the credentials provided
-
-#### Sample Success Response
-
-```json
-{
-  "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y"
-}
+```bash
+cd React-Quiz-App
 ```
 
-#### Sample Failure Response
+Install dependencies:
 
-```json
-{
-  "status_code": 404,
-  "error_msg": "Username is not found"
-}
+```bash
+npm install
 ```
 
-**questionsApiUrl**
+Start the development server:
 
-#### API: `https://apis.ccbp.in/assess/questions`
-
-#### Method: `GET`
-
-#### Description:
-
-Returns a response containing the list of all questions
-
-#### Sample Response
-
-```json
-{
-  "total": 10,
-  "questions": [
-    {
-      "id": "4c08f8e2-d69a-4cfa-9245-b76bdf3588d1",
-      "options_type": "DEFAULT",
-      "question_text": "React JS is developed by?",
-      "options": [
-        {
-          "id": "a8222953-e043-4873-abee-bc5dae13ee51",
-          "text": "Facebook",
-          "is_correct": "true"
-        },
-        {
-          "id": "0d5470e9-915e-400f-b495-930291046216",
-          "text": "Twitter",
-          "is_correct": "false"
-        },
-        "..."
-      ]
-    },
-    "..."
-  ]
-}
+```bash
+npm start
 ```
 
-</details>
+The application will be available at:
 
-### Important Note
+```text
+http://localhost:3000
+```
 
-<details>
-<summary>Click to view</summary>
+## Project Structure
 
-<br/>
+```text
+src/
+├── components/
+│   ├── Login/
+│   ├── Home/
+│   ├── Assessment/
+│   ├── Results/
+│   ├── Header/
+│   └── NotFound/
+├── App.js
+├── App.css
+└── index.js
+```
 
-**The following instructions are required for the tests to pass**
+## Key React Concepts Demonstrated
 
-- **Note:**
+This project demonstrates practical implementation of:
 
-  - For Mini Projects, You have to use HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, if you use styled components.
-  - Refer to the below Example for the usage of `data-testid` in the HTML elements
-    - Example: `<div data-testid="questionItem" className="question-item"/>`
+* React functional components
+* React Hooks
+* Component-based architecture
+* State management
+* REST API integration
+* Asynchronous data fetching
+* Authentication and authorization
+* Protected routes
+* Client-side routing
+* Conditional rendering
+* Dynamic rendering based on API data
+* Countdown timers
+* Form handling
+* Error handling
+* Loading states
+* Responsive UI development
 
-- **Routes**
+## Credits
 
-  - `Home` Route should consist of `/` in the URL path
-  - `Assessment` Route should consist of `/assessment` in the URL path
-  - `Results` Route should consist of `/results` in the URL path
+This project was developed as part of the **Nxt Assess** project from the CCBP React course and was implemented to practice the React concepts covered throughout the course.
 
-  - **Header**
+## Author
 
-    - The Nxt Assess Logo image in Header should consist of alt attribute value as `website logo`
+**Devendra Chandana**
 
-- **Login Route**
-
-  - The Nxt Assess Logo image should consist of alt attribute value as `login website logo`
-
-- **Home Route**
-
-  - The Assessment image should consist of alt attribute value as `assessment`.
-  - Kindly follow the assessment instructions as shown in figma.
-
-- **Assessment Route**
-
-  - Duration of the Assessment must be 10 minutes
-  - The Failure View image should consist of alt attribute value as `failure view`
-  - Wrap the `Loader` component with an HTML container element and add the `data-testid` attribute value as **loader** to it
-
-  ```jsx
-  <div className="loader-container" data-testid="loader">
-    <Loader type="ThreeDots" color="#263868" height={50} width={50} />
-  </div>
-  ```
-
-  - The question with `options_type` is `IMAGE`, options should have alt attribute value as the value of the key `text` of each option item in the corresponding question from the list of questions from the received response
-
-- **Results Route**
-
-  - The Submit image should consist of alt attribute value as `submit`
-  - The Time Up image should consist of alt attribute value as `time up`
-
-- **Not Found Route**
-  - The Not Found image should consist of alt attribute value as `not found`
-
-</details>
-
-### Project Submission Instructions
-
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews.
-
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab.
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+GitHub:
+https://github.com/dev-devendra21
